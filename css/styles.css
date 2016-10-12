@@ -1,0 +1,81 @@
+@import "normalize.css";
+@import "skeleton.css";
+@import "header.css";
+@import "footer.css";
+@import "content.css";
+
+/* general */
+
+body {
+	font-family: 'Cormorant Garamond', serif;
+	background-color: #f3f3f3;
+	font-size: 16px;
+	line-height: 1.6;
+	color: #222;
+	font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+	margin-bottom: 0;
+}
+
+h1, h2 {
+	font-weight: 700;
+}
+
+#cover-image {
+	height: 500px;
+	background: url(../img/officeCover.png); 
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#banner-image {
+	height:300px;
+	background: url(../img/bannerImage.png); 
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;	
+}
+
+.center-align {
+	text-align: center;
+}
+
+.button-primary {
+	background-color: #5C7794 !important;
+	border-color: #526b85 !important;
+}
+
+.price {
+	color: #005959;
+	font-size: 2.5rem;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+form {
+	margin-top: 2rem;
+}
+
+#admin td a {
+	color: #000;
+	text-decoration: none;
+}
+
+/* Larger than tablet */
+@media (max-width: 550px) {
+	.icon-text .u-full-width {width: 40px !important;}
+	.icon-text .center-align {text-align: left;}
+}

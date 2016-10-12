@@ -1,0 +1,86 @@
+#content {
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+.card {
+	background-color: #fff;
+	margin-top: 2rem;
+}
+
+.card .copy-container {
+	padding-top: 2rem;
+	padding-right: 2rem;
+}
+
+.title-section {
+	text-align: center;
+	margin-top: 50px;
+	border-bottom: 1px solid #000;
+}
+
+.product-title {
+	margin-bottom: 3rem;
+}
+
+.title-section h2 {
+	padding-bottom: 2rem;
+}
+
+.product-grid {
+	margin-top: 4rem;
+}
+
+.product-grid span {
+	padding-top: 1.5rem;
+}
+
+/* cart */
+.button-row {
+	padding-top: 2rem;
+}
+
+.product-card {
+	background-color: #fff;
+	margin-top: 2rem;
+	padding: 1rem;
+}
+
+.product-card p {
+	margin-bottom: 1rem;
+}
+
+.price {
+	font-size: 2rem;
+}
+
+.important-total {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.important-total td {
+	border-bottom: none;
+}
+
+/* account */
+
+.order-button {
+	margin-top: 1.5rem;
+}
+
+.payment-info {
+	border-bottom: 1px solid #E1E1E1;
+}
+
+.payment-info table {
+	margin-bottom: 0;
+}
+
+.payment-info td {
+	border-bottom: none;
+}
+
+.add-button {
+	padding-top: 5rem;
+}

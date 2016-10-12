@@ -1,0 +1,42 @@
+#footer {
+	background-color: #2A2424;
+	color: #fff;
+	padding-top: 3rem;
+}
+
+#footer p {
+	margin-bottom: .5rem;
+}
+
+#footer .navbar-list a, .footer-nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#footer .contact {
+	padding-top: 1.5rem;	
+	font-size: 1.25rem;
+	color: #a9a7a7;
+}
+
+.footer-nav {
+	list-style: none;
+}
+
+.footer-nav .title {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.connect-container {
+	border-left: 1px solid #fff;
+	padding-left: 1.5rem;
+}
+
+.disclaimer {
+	color: #fff;
+	font-size: .8rem;
+	text-align: center;
+	font-weight: 300;
+	padding-top: 3rem;
+}
