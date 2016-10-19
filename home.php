@@ -48,21 +48,25 @@
 						while ($deskProduct = $desksResult->fetch_assoc()) {
 					
 							print("
-								<div class='four columns product-card'>
-									<img class='u-max-full-width' src= '" . $deskProduct["image"] . "'>
-									<div class='row information'>
-										<h4>" . $deskProduct["product_name"] . "</h4>
-										<div class='row'>
-											<p class='price u-pull-left'> " . $deskProduct["price"] . " </p>
-											<div class='u-pull-right'>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
+								<div class='four columns'>
+									<a href='#'>
+										<div class='product-card'>
+											<img class='u-max-full-width' src= '" . $deskProduct["image"] . "'>
+											<div class='row information'>
+												<h4>" . $deskProduct["product_name"] . "</h4>
+												<div class='row'>
+													<p class='price u-pull-left'> " . $deskProduct["price"] . " </p>
+													<div class='u-pull-right'>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							");
 						}
@@ -88,21 +92,25 @@
 						while ($chairProduct = $chairsResult->fetch_assoc()) {
 					
 							print("
-								<div class='four columns product-card'>
-									<img class='u-max-full-width' src= '" . $chairProduct["image"] . "'>
-									<div class='row information'>
-										<h4>" . $chairProduct["product_name"] . "</h4>
-										<div class='row'>
-											<p class='price u-pull-left'> " . $chairProduct["price"] . " </p>
-											<div class='u-pull-right'>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
+								<div class='four columns'>
+									<a href='#'>
+										<div class='product-card'>
+											<img class='u-max-full-width' src= '" . $chairProduct["image"] . "'>
+											<div class='row information'>
+												<h4>" . $chairProduct["product_name"] . "</h4>
+												<div class='row'>
+													<p class='price u-pull-left'> " . $chairProduct["price"] . " </p>
+													<div class='u-pull-right'>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							");
 						}
@@ -129,20 +137,24 @@
 					
 							print("
 								<div class='four columns product-card'>
-									<img class='u-max-full-width' src= '" . $tableProduct["image"] . "'>
-									<div class='row information'>
-										<h4>" . $tableProduct["product_name"] . "</h4>
-										<div class='row'>
-											<p class='price u-pull-left'> " . $tableProduct["price"] . " </p>
-											<div class='u-pull-right'>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
-												<i class='fa fa-star-o' aria-hidden='true'></i>
+									<a href='#'>
+										<div class='product-card'>
+											<img class='u-max-full-width' src= '" . $tableProduct["image"] . "'>
+											<div class='row information'>
+												<h4>" . $tableProduct["product_name"] . "</h4>
+												<div class='row'>
+													<p class='price u-pull-left'> " . $tableProduct["price"] . " </p>
+													<div class='u-pull-right'>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+														<i class='fa fa-star-o' aria-hidden='true'></i>
+													</div>
+												</div>
 											</div>
 										</div>
-									</div>
+									</a>
 								</div>
 							");
 						}
