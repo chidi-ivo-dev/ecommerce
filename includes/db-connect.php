@@ -2,12 +2,12 @@
 
 	//database
 
-	$serverName = "sulley.cah.ucf.edu";
-	$dbName = "dig4530c_004";
+	$serverName = "localhost";
+	$dbName = "cb";
 
 	//user
-	$username = "dig4530c_004";
-	$password = "knights123!";
+	$username = "root";
+	$password = "root";
 
 	//connection
 	$connection = new mysqli($serverName, $username, $password, $dbName);
