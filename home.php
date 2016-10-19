@@ -13,9 +13,6 @@
 ?>
 
 <!-- Body -->
-
-		<h1>TEST</h1>
-
 		<div class="row" id="cover-image">
 		</div>
 
