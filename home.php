@@ -40,7 +40,6 @@
 		  				</div>
 		  				<div class="one-half column">
 		  					<a href="catalog.php?category=Desks"><input class="button u-pull-right" type="submit" value="view more"></a>
-		  			  		<!-- <span class="u-pull-right"><a href="desks-catalog.php">view more &raquo;</a></span> -->
 		  				</div>
 					</div>				
 					<div class="row">
@@ -68,39 +67,7 @@
 							");
 						}
 					}	
-?>
-						<!-- <div class="three columns">
-							<img class="u-max-full-width" src="img/desk1.png">
-							<div class="row information">
-								<h4>Winchombe Credenza</h4>
-								<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-								<div class="price">&#36;600</div>
-							</div>
-						</div>
-						<div class="three columns">
-							<img class="u-max-full-width" src="img/desk2.gif">
-							<div class="row information">
-								<h4>Manor Modern</h4>
-								<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-								<div class="price">&#36;5000</div>
-							</div>
-						</div>
-						<div class="three columns">
-							<img class="u-max-full-width" src="img/desk3.gif">
-							<div class="row information">
-								<h4>Grandover Desk</h4>
-								<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-								<div class="price">&#36;6000</div>
-							</div>						
-						</div>
-						<div class="three columns">
-							<img class="u-max-full-width" src="img/desk4.gif">
-							<div class="row information">
-								<h4>Bush Saratoga</h4>
-								<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-								<div class="price">&#36;900</div>
-							</div>							
-						</div> -->
+?>				
 					</div>
 				</div>
 			</div>
@@ -113,7 +80,6 @@
 		  			</div>
 		  			<div class="one-half column">
 		  				<a href="catalog.php?category=Chairs"><input class="button u-pull-right" type="submit" value="view more"></a>
-		  			  	<!-- <span class="u-pull-right"><a href="chairs-catalog.php">view more &raquo;</a></span> -->
 		  			</div>
 		  		  </div>
 		  		  <div class="row">	
@@ -142,38 +108,6 @@
 						}
 					}	
 ?>	  		    		
-<!-- 		  			  <div class="three columns">
-		  			  	<img class="u-max-full-width" src="img/chair1.png">
-						<div class="row information">
-							<h4>Don Pablo Chair</h4>
-							<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-							<div class="price">&#36;399</div>
-						</div>		  			  	
-		  			  </div>
-		  			  <div class="three columns">
-		  			  	<img class="u-max-full-width" src="img/chair2.png">
-						<div class="row information">
-							<h4>Comfy Sitter Chair</h4>
-							<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-							<div class="price">&#36;299</div>
-						</div>		  			  
-		  			  </div>
-		  			  <div class="three columns">
-		  			  	<img class="u-max-full-width" src="img/chair3.gif">
-						<div class="row information">
-							<h4>The Sleeper Chair</h4>
-							<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-							<div class="price">&#36;299</div>
-						</div>		  			  	
-		  			  </div>
-		  			  <div class="three columns">
-		  			  	<img class="u-max-full-width" src="img/chair4.png">
-						<div class="row information">
-							<h4>Presidential Chair</h4>
-							<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-							<div class="price">&#36;499</div>
-						</div>		  			  	
-		  			  </div> -->
 		  		  </div>
 		  	  </div>
 		    </div>
@@ -186,7 +120,6 @@
 		  			</div>
 		  			<div class="one-half column">
 		  				<a href="catalog.php?category=Tables"><input class="button u-pull-right" type="submit" value="view more"></a>		
-		  			  	<!-- <span class="u-pull-right"><a href="tables-catalog.php">view more &raquo;</a></span> -->
 		  			</div>
 		  		  </div>
 		  		  <div class="row">
@@ -214,39 +147,7 @@
 							");
 						}
 					}	
-?>	  		  
-		  			  <!-- <div class="three columns">
-		  			  	<img class="u-max-full-width" src="img/table1.png">
-						<div class="row information">
-							<h4>Nest of Tables</h4>
-							<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-							<div class="price">&#36;2000</div>
-						</div>		  			  	
-		  			  </div>
-		  			  <div class="three columns">
-		  			  	<img class="u-max-full-width" src="img/table2.gif">
-						<div class="row information">
-							<h4>Ding Table</h4>
-							<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-							<div class="price">&#36;500</div>
-						</div>		  			  	
-		  			  </div>
-		  			  <div class="three columns">
-		  			  	<img class="u-max-full-width" src="img/table3.png">
-						<div class="row information">
-							<h4>Spin Side Table: Metal</h4>
-							<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-							<div class="price">&#36;530</div>
-						</div>		  			  	
-		  			  </div>
-		  			  <div class="three columns">
-		  			  	<img class="u-max-full-width" src="img/table4.png">
-						<div class="row information">
-							<h4>Bend Coffee Table</h4>
-							<i class="fa fa-heart-o u-pull-right" aria-hidden="true"></i>
-							<div class="price">&#36;8300</div>
-						</div>		  			  	
-		  			  </div> -->
+?>	  		  		  			 
 		  		  </div>
 		  	  </div>
 		    </div>
