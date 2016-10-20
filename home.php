@@ -45,17 +45,17 @@
 					<div class="row">
 <?php 
 					if ($desks_result->num_rows>0) {
-						while ($deskProduct = $desks_result->fetch_assoc()) {
+						while ($desk_product = $desks_result->fetch_assoc()) {
 					
 							print("
 								<div class='four columns'>
 									<a href='#'>
 										<div class='product-card'>
-											<img class='u-max-full-width' src= '" . $deskProduct["image"] . "'>
+											<img class='u-max-full-width' src= '" . $desk_product["image"] . "'>
 											<div class='row information'>
-												<h4>" . $deskProduct["product_name"] . "</h4>
+												<h4>" . $desk_product["product_name"] . "</h4>
 												<div class='row'>
-													<p class='price u-pull-left'> " . $deskProduct["price"] . " </p>
+													<p class='price u-pull-left'> " . $desk_product["price"] . " </p>
 													<div class='u-pull-right'>
 														<i class='fa fa-star-o' aria-hidden='true'></i>
 														<i class='fa fa-star-o' aria-hidden='true'></i>
@@ -89,17 +89,17 @@
 		  		  <div class="row">	
 <?php 
 					if ($chairs_result->num_rows>0) {
-						while ($chairProduct = $chairs_result->fetch_assoc()) {
+						while ($chair_product = $chairs_result->fetch_assoc()) {
 					
 							print("
 								<div class='four columns'>
 									<a href='#'>
 										<div class='product-card'>
-											<img class='u-max-full-width' src= '" . $chairProduct["image"] . "'>
+											<img class='u-max-full-width' src= '" . $chair_product["image"] . "'>
 											<div class='row information'>
-												<h4>" . $chairProduct["product_name"] . "</h4>
+												<h4>" . $chair_product["product_name"] . "</h4>
 												<div class='row'>
-													<p class='price u-pull-left'> " . $chairProduct["price"] . " </p>
+													<p class='price u-pull-left'> " . $chair_product["price"] . " </p>
 													<div class='u-pull-right'>
 														<i class='fa fa-star-o' aria-hidden='true'></i>
 														<i class='fa fa-star-o' aria-hidden='true'></i>
@@ -133,17 +133,17 @@
 		  		  <div class="row">
 <?php 
 					if ($tables_result->num_rows>0) {
-						while ($tableProduct = $tables_result->fetch_assoc()) {
+						while ($table_product = $tables_result->fetch_assoc()) {
 					
 							print("
 								<div class='four columns product-card'>
 									<a href='#'>
 										<div class='product-card'>
-											<img class='u-max-full-width' src= '" . $tableProduct["image"] . "'>
+											<img class='u-max-full-width' src= '" . $table_product["image"] . "'>
 											<div class='row information'>
-												<h4>" . $tableProduct["product_name"] . "</h4>
+												<h4>" . $table_product["product_name"] . "</h4>
 												<div class='row'>
-													<p class='price u-pull-left'> " . $tableProduct["price"] . " </p>
+													<p class='price u-pull-left'> " . $table_product["price"] . " </p>
 													<div class='u-pull-right'>
 														<i class='fa fa-star-o' aria-hidden='true'></i>
 														<i class='fa fa-star-o' aria-hidden='true'></i>

@@ -2,7 +2,7 @@
 
 	//database
 
-	// wat up
+	// wat up 
 
 	$serverName = "localhost";
 	$dbName = "cb";
