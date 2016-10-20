@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<meta name="description" content="">
 			<meta name="author" content="">
-		<title>Chairman's Bestfriend Home - Jessica Sunga</title>
+		<title>Chairman's Bestfriend </title>
 
 		<!-- mobile -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,7 +37,9 @@
 			    </div>
 			    <div class="four columns search-input"> 
 					<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-					<input class="u-full-width" type="search" placeholder="Search" id="searchInput">
+					<form action="search.php" method="GET">
+						<input class="u-full-width" type="text" name="query" placeholder="Search" id="searchInput">
+					</form>
 			    </div>
 			    <div class="one column u-pull-right icon-text">
 			    	<a href="client.php"><img class="u-full-width" src="img/shoppingCart.png"></a>
