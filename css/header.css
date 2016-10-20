@@ -30,8 +30,14 @@
 	text-align: center;
 }
 
+/* Search Styles */
+
 .search-input {
 	position: relative;
+}
+
+.search-input form {
+	margin: 0;
 }
 
 .search-input .fa-search {

@@ -35,9 +35,9 @@
 			  	<div class="one-half column">
 			    	<a href="home.php"><img class="logo" src="img/logoLettermark.png"></a>
 			    </div>
-			    <div class="four columns search-input"> 
-					<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-					<form action="search.php" method="GET">
+			    <div class="four columns search-input">
+			    	<form action="search.php" method="GET">
+						<a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
 						<input class="u-full-width" type="text" name="query" placeholder="Search" id="searchInput">
 					</form>
 			    </div>
