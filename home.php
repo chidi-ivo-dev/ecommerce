@@ -2,13 +2,13 @@
 
 	include 'includes/header.php'; 
 		
-	$desksSql = "SELECT * FROM products WHERE category = 'Desks' LIMIT 1, 3";
-	$chairsSql = "SELECT * FROM products WHERE category = 'Chairs' LIMIT 1, 3";
-	$tablesSql = "SELECT * FROM products WHERE category = 'Tables' LIMIT 1, 3";
+	$desks_sql = "SELECT * FROM products WHERE category = 'Desks' LIMIT 1, 3";
+	$chairs_sql = "SELECT * FROM products WHERE category = 'Chairs' LIMIT 1, 3";
+	$tables_sql = "SELECT * FROM products WHERE category = 'Tables' LIMIT 1, 3";
 
-	$desksResult = $connection->query($desksSql);
-	$chairsResult = $connection->query($chairsSql);
-	$tablesResult = $connection->query($tablesSql);
+	$desks_result = $connection->query($desks_sql);
+	$chairs_result = $connection->query($chairs_sql);
+	$tables_result = $connection->query($tables_sql);
 
 ?>
 
@@ -44,8 +44,8 @@
 					</div>				
 					<div class="row">
 <?php 
-					if ($desksResult->num_rows>0) {
-						while ($deskProduct = $desksResult->fetch_assoc()) {
+					if ($desks_result->num_rows>0) {
+						while ($deskProduct = $desks_result->fetch_assoc()) {
 					
 							print("
 								<div class='four columns'>
@@ -88,8 +88,8 @@
 		  		  </div>
 		  		  <div class="row">	
 <?php 
-					if ($chairsResult->num_rows>0) {
-						while ($chairProduct = $chairsResult->fetch_assoc()) {
+					if ($chairs_result->num_rows>0) {
+						while ($chairProduct = $chairs_result->fetch_assoc()) {
 					
 							print("
 								<div class='four columns'>
@@ -132,8 +132,8 @@
 		  		  </div>
 		  		  <div class="row">
 <?php 
-					if ($tablesResult->num_rows>0) {
-						while ($tableProduct = $tablesResult->fetch_assoc()) {
+					if ($tables_result->num_rows>0) {
+						while ($tableProduct = $tables_result->fetch_assoc()) {
 					
 							print("
 								<div class='four columns product-card'>
