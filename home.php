@@ -49,7 +49,7 @@
 					
 							print("
 								<div class='four columns'>
-									<a href='#'>
+									<a href='product.php?sku=". $desk_product["sku"] . "'>
 										<div class='product-card'>
 											<img class='u-max-full-width' src= '" . $desk_product["image"] . "'>
 											<div class='row information'>
@@ -93,7 +93,7 @@
 					
 							print("
 								<div class='four columns'>
-									<a href='#'>
+									<a href='product.php?sku=". $chair_product["sku"] . "'>
 										<div class='product-card'>
 											<img class='u-max-full-width' src= '" . $chair_product["image"] . "'>
 											<div class='row information'>
@@ -137,7 +137,7 @@
 					
 							print("
 								<div class='four columns product-card'>
-									<a href='#'>
+									<a href='product.php?sku=". $table_product["sku"] . "'>
 										<div class='product-card'>
 											<img class='u-max-full-width' src= '" . $table_product["image"] . "'>
 											<div class='row information'>

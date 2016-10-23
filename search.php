@@ -17,6 +17,7 @@ if (!isset($_GET['query'])) {
 	// initiate search through database from product_name and description.
 	$search_sql= "SELECT * FROM products WHERE description LIKE '%".$query."%' OR product_name LIKE '%".$query."%' OR category LIKE '%".$query."%'";
 
+	// store results here
 	$search_results = $connection->query($search_sql);
 
 	if ($search_results->num_rows>0) {

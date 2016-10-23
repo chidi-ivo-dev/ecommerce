@@ -27,10 +27,10 @@
 		  		<?php
 
 					if ($result->num_rows>0) {
-
 						while ($row = $result->fetch_assoc()) {
 
-							print ('<div class="row u-cf u-full-width product-card">');
+
+							print ("<div class='row u-cf u-full-width product-card'><a href='product.php?sku=". $row["sku"] . "'>");
 							
 							print ('<div class="three columns"><img class="u-max-full-width" src=" ' . $row["image"] . '"></div>');
 
@@ -55,7 +55,7 @@
 
 							print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
 
-							print ('</div>');
+							print ('</a></div>');
 						}
 
 					} else {

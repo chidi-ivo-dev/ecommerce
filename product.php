@@ -2,6 +2,8 @@
 
 	include 'includes/header.php';
 
+	$sku = $_GET['sku'];
+
 	$sql = "SELECT * FROM products WHERE sku = ". $sku ."";
 
 	$result = $connection->query($sql);
@@ -31,6 +33,8 @@
 					print ('<div class="two columns"><p>SKU: ' . $row["sku"] . '</p></div>');
 
 					print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
+
+					print ('<div class="row"><div class="button u-pull-right">Add to Cart</div></div>');
 
 					print ('</div>');
 				}
