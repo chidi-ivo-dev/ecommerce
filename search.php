@@ -15,7 +15,7 @@ if (!isset($_GET['query'])) {
 	$query = mysql_real_escape_string($_GET['query']);
 
 	// initiate search through database from product_name and description.
-	$search_sql= "SELECT * FROM products WHERE description LIKE '%".$query."%'";
+	$search_sql= "SELECT * FROM products WHERE description LIKE '%".$query."%' OR product_name LIKE '%".$query."%' OR category LIKE '%".$query."%'";
 
 	$search_results = $connection->query($search_sql);
 
