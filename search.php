@@ -1,4 +1,9 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php'; 
+
+if (!isset($_GET['query'])) {
+	header("Location: home.php");
+}
+?>
 
 <!-- Body -->
 
@@ -6,26 +11,52 @@
 
 <?php
 
-		// get value from search form
-		$query = $_GET['query'];
+	// get value from search form
+	$query = mysql_real_escape_string($_GET['query']);
 
-		// changes characters used in html to equivalent
-		$query = htmlspecialchars($query);
+	// initiate search through database from product_name and description.
+	$search_sql= "SELECT * FROM products WHERE description LIKE '%".$query."%'";
 
-		// no sql injection
-		$query = mysql_real_escape_string($query);
+	$search_results = $connection->query($search_sql);
 
-		$query_sql = "SELECT * FROM products WHERE ('product_name' LIKE '%" . $query . "%') OR ('category' LIKE '%" . $query . "%')";
+	if ($search_results->num_rows>0) {
 
-		$search_results= $connection->query($query_sql);
+		print ('<h2>You searched for: ' . $query . '</h2>');
 
-		if ($connection) {
-  			echo 'conected<br>';
-		} else {
-  			echo 'not conected<br>';
+		while ($row = $search_results->fetch_assoc()) { 
+
+			print ('<div class="row u-cf u-full-width product-card">');
+			
+			print ('<div class="three columns"><img class="u-max-full-width" src=" ' . $row["image"] . '"></div>');
+
+			print (
+					'<div class="five columns"><h3>' 
+					. $row["product_name"] . 
+					'</h3><p>' 
+					. $row["description"] . 
+					'</p><p>Size: ' 
+					. $row["size"] . 
+					'</p><p>Stock: ' 
+					. $row["stock"] . 
+					'</p>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					</div>');
+
+			print ('<div class="two columns"><p>SKU: ' . $row["sku"] . '</p></div>');
+
+			print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
+
+			print ('</div>');
+
 		}
 
-		print($query);
+	} else {
+		print ('No results found for query.');
+	}
 ?>
 
 </div>
