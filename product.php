@@ -34,7 +34,7 @@
 
 					print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
 
-					print ('<div class="row"><div class="button u-pull-right">Add to Cart</div></div>');
+					print ("<div class='row'><a href='cart.php?sku=". $row["sku"] . "' class='u-pull-right'><input class='button-primary' type='submit' value='Add to Cart'></a></a></div>");
 
 					print ('</div>');
 				}

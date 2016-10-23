@@ -1,4 +1,16 @@
-<?php include 'includes/header.php'; ?>
+<?php include 'includes/header.php'; 
+
+  $sku = $_GET['sku'];
+
+  $sql = "SELECT * FROM products WHERE sku = ". $sku ."";
+
+  $result = $connection->query($sql);
+
+  if (!$result) {
+    trigger_error('Invalid query: ' . $connection->error);
+  }
+
+?>
 
 <!--- Body -->
 
@@ -17,41 +29,32 @@
 
   <div class="row">
 
-  	<div class="row u-cf u-full-width product-card">
-  		<div class="three columns">
-				<img class="u-max-full-width" src="img/table1.png">
-  		</div>
-  		<div class="five columns">
-  			<h3>Nest of Tables</h3>
-  			<p>True to its name, contemporary pickings are the go-to here, all easily searchable by material (wood, glass), category (computer desk, writing desk), and even width, depth, and height.</p>	
-  			<a href="#">remove</a>	  				
-  		</div>
-  		<div class="two columns">
-  			<span>qty.</span>
-  			<input  style="width: 50px" type="email" placeholder="1" id="quantityInput">
-  		</div>
-  		<div class="two columns">
-  			<p class="price">$2000</p>
-  		</div>		  	
-  	</div>
+<?php
 
-  	<div class="row u-cf u-full-width product-card">
-  		<div class="three columns">
-  			<img class="u-max-full-width" src="img/chair1.png">
-  		</div>
-  		<div class="five columns">
-  			<h3>Ottoman Special</h3>
-  			<p>True to its name, contemporary pickings are the go-to here, all easily searchable by material (wood, glass), category (computer desk, writing desk), and even width, depth, and height.</p>
-  			<a href="#">remove</a>
-  		</div>
-  		<div class="two columns">
-  			<span>qty.</span>
-  			<input  style="width: 50px" type="email" placeholder="1" id="quantityInput">
-  		</div>
-  		<div class="two columns">
-  			<p class="price">$299</p>
-  		</div>	
-  	</div>
+      if ($result->num_rows>0) {
+
+        while ($row = $result->fetch_assoc()) {
+
+          print ('<div class="row u-cf u-full-width product-card">');
+          
+          print ('<div class="three columns"><img class="u-max-full-width" src=" ' . $row["image"] . '"></div>');
+
+
+          print ('<div class="five columns"><h3>' . $row["product_name"] . '</h3><p>' . $row["description"] . '</p><p>Size: ' . $row["size"] . '</p><p>Stock: ' . $row["stock"] . '</p></div>');
+
+          print ('<div class="two columns"><p>SKU: ' . $row["sku"] . '</p></div>');
+
+          print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
+
+          print ('</div>');
+        }
+
+      } else {
+        print ("No results found for query.");
+      }
+
+?>  
+
   </div>
 
   <div class="row">

@@ -26,7 +26,7 @@ if (!isset($_GET['query'])) {
 
 		while ($row = $search_results->fetch_assoc()) { 
 
-			print ('<div class="row u-cf u-full-width product-card">');
+			print ("<div class='row u-cf u-full-width product-card'><a href='product.php?sku=". $row["sku"] . "'>");
 			
 			print ('<div class="three columns"><img class="u-max-full-width" src=" ' . $row["image"] . '"></div>');
 
@@ -51,7 +51,7 @@ if (!isset($_GET['query'])) {
 
 			print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
 
-			print ('</div>');
+			print ('</a></div>');
 
 		}
 
