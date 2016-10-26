@@ -1,6 +1,9 @@
 <!doctype html>
 <?php
 	include("includes/db-connect.php");
+
+	// session
+	session_start();
 ?>
 <html>
 	<head>
