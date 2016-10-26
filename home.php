@@ -16,6 +16,15 @@
 		<div class="row" id="cover-image">
 		</div>
 
+<?php
+				if (isset($_SESSION)) {
+					print ("session is active");
+				} else {
+					print ("error");
+				}
+
+?>			
+
 		<div class="container" id="content">
 			<div class="row card">
 				<div class="one-half column" id="banner-image">
