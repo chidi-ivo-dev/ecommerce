@@ -1,6 +1,6 @@
 <?php include 'includes/header.php'; 
 
-  $sku = $_GET['sku'];
+  $sku = isset($_GET['sku']);
 
   $sql = "SELECT * FROM products WHERE sku = ". $sku ."";
 
