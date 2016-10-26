@@ -13,10 +13,12 @@
 ?>
 
 <!-- Body -->
+
 		<div class="row" id="cover-image">
 		</div>
 
 <?php
+
 				if (isset($_SESSION)) {
 					print ("session is active");
 				} else {
