@@ -46,11 +46,11 @@
 			    </div>
 			    <div class="one column u-pull-right icon-text">
 			    	<a href="client.php"><img class="u-full-width" src="img/shoppingCart.png"></a>
-			    	<div class="center-align"><a href="client.php">Account</a></div>
+			    	<div class="center-align"><a href="client.php">Cart</a></div>
 			    </div>
 			    <div class="one column u-pull-right icon-text">
 			    	<a href="cart.php"><img class="u-full-width" src="img/account.png"></a>
-			    	<div class="center-align"><a href="cart.php">Cart</a></div>
+			    	<div class="center-align"><a href="cart.php">Account</a></div>
 			    </div>
 			</div>
 		</div>
