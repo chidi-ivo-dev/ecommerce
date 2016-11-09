@@ -15,7 +15,15 @@
 
 				} else {
 
-					print ("<h1>You are not logged in.</h1>");
+					print ("<h2>Log In</h2>
+
+							<form name='login' action='login.php' method='POST'>
+								<b>Username:</b><input type='text' name='username'><br/>
+								<b>Password:</b><input type='password' name='password'><br/>
+								<input id='button' name='submit' id='submit' type='submit' value='Login'>
+							</form>
+					");
+
 				}
 ?>
 			 </div>
