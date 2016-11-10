@@ -1,6 +1,13 @@
 <?php include 'includes/header.php'; 
 
-  $sku = $_GET['sku'];
+  if (isset($_GET['sku'])) {
+
+    $sku = $_GET['sku'];
+
+  }
+  else {
+    print("Not there!");
+  }
 
   $sql = "SELECT * FROM products WHERE sku = ". $sku ."";
 
