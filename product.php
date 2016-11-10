@@ -35,9 +35,8 @@
 					print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
 
 					print ("<div class='row'>
-						<a href='cart.php?sku=". $row["sku"] . "' class='u-pull-right'>
 						<form action='cart.php' method='get'>
-						<input class='button-primary' type='submit' value='Add to Cart'></form></a></a></div>");
+						<input href='cart.php?sku=". $row["sku"] . "' class='button-primary u-pull-right' type='submit' value='Add to Cart'></form></div>");
 
 					print ('</div>');
 				}

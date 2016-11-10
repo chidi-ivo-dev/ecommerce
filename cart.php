@@ -4,9 +4,10 @@
 
     $sku = $_GET['sku'];
 
-  }
-  else {
-    print("Not there!");
+  } else {
+    
+    ini_set('display_errors', 1);
+
   }
 
   $sql = "SELECT * FROM products WHERE sku = ". $sku ."";
