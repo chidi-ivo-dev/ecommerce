@@ -49,8 +49,8 @@
 			    	<div class="center-align"><a href="cart.php">Cart</a></div>
 			    </div>
 			    <div class="one column u-pull-right icon-text">
-			    	<a href="client.php"><img class="u-full-width" src="img/account.png"></a>
-			    	<div class="center-align"><a href="client.php">Account</a></div>
+			    	<a href="login.php"><img class="u-full-width" src="img/account.png"></a>
+			    	<div class="center-align"><a href="login.php">Account</a></div>
 			    </div>
 			</div>
 		</div>
