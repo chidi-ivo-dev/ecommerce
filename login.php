@@ -22,6 +22,8 @@
 								<b>Password:</b><input type='password' name='password'><br/>
 								<input id='button' name='submit' id='submit' type='submit' value='Login'>
 							</form>
+
+							<a class='button' href='create_account.php'>Create Account</a>
 					");
 
 				}
