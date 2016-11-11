@@ -65,8 +65,12 @@ h1, h2 {
 	font-weight: bold;
 }
 
-form {
-	margin-top: 2rem;
+.login-container h2 {
+	margin-bottom: 1rem;
+}
+
+.login-container p {
+	margin-bottom: 0;
 }
 
 #admin td a {

@@ -15,15 +15,26 @@
 
 				} else {
 
-					print ("<h2>Log In</h2>
+					print ("
 
-							<form name='login' action='login.php' method='POST'>
-								<b>Username:</b><input type='text' name='username'><br/>
-								<b>Password:</b><input type='password' name='password'><br/>
-								<input id='button' name='submit' id='submit' type='submit' value='Login'>
-							</form>
+						<div class='row login-container'>
 
-							<a class='button' href='create_account.php'>Create Account</a>
+							<div class='one-half column'>
+								<h2>Log In</h2>
+								<form name='login' action='login.php' method='POST'>
+									<b>Username: </b><input class='u-full-width' type='text' name='username'><br/>
+									<b>Password: </b><input class='u-full-width' type='password' name='password'><br/>
+									<input id='button' class='button-primary' name='submit' id='submit' type='submit' value='Login'>
+								</form>
+							</div>
+
+							<div class='one-half column u-pull-right'>
+								<h2>Create Account</h2>
+									<p>Don't have an account? Create one here!</p>
+									<a href='create_account.php'><input class='button-primary create-account-button' type='submit' value='Create Account'></a>
+							</div>
+						</div>
+
 					");
 
 				}
