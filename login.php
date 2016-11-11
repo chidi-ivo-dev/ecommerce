@@ -25,6 +25,35 @@
 					");
 
 				}
+
+				if ((isset($_POST['submit'])) && (!isset($_SESSION['logged_in']))) {
+
+					$username= mysql_real_escape_string($_POST['username']);
+
+					$password= mysql_real_escape_string($_POST['password']);
+
+					$sha_password = sha1($password);
+
+					$query= "SELECT * FROM users WHERE username= '$username' AND password= '$sha_password' LIMIT 1";
+
+					$result= mysql_query($query, $connection);
+
+					if (mysql_num_rows($result) == 1) {
+
+						$row = mysql_fetch_row($result);
+
+						$_SESSION['logged_in'] = true;
+
+						print "You are now logged in " . $username . ". You will be redirected to the homepage in 5 seconds.";
+
+						header("Refresh:5; url=home.php");
+
+					} else {
+
+						print "<h3>The login information you entered is incorrect, please try again.<h3>";
+					}
+
+				}
 ?>
 			 </div>
 		</div>
