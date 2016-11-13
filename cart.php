@@ -1,4 +1,5 @@
 <?php include 'includes/header.php'; 
+  
 
   if (isset($_GET['sku'])) {
 
@@ -70,22 +71,29 @@
   		<div class="info">
 				<table class="u-full-width">
 				  <tbody>
-				    <tr>
-				      <td>Subtotal</td>
-				      <td>&#36;2,299</td>
-				    </tr>
-				    <tr>
-				      <td>Shipping and Handling</td>
-				      <td>FREE</td>
-				    </tr>
-				    <tr>
-				      <td>Estimated Tax</td>
-				      <td>&#36;0</td>
-				    </tr>	
-				    <tr class="important-total">
-				      <td>Estimated Total</td>
-				      <td>&#36;2,299</td>
-				    </tr>						    						
+          <?php
+          $total = 0;
+          foreach($_SESSION['cart'] as $id=>$val)
+          {
+            $total=$val['price'];
+				    print '<tr>
+				             <td>Subtotal</td>
+				             <td>'.$val['price'].'</td>
+				           </tr>
+				           <tr>
+				             <td>Shipping and Handling</td>
+				             <td>FREE</td>
+				           </tr>
+				           <tr>
+				             <td>Estimated Tax</td>
+				             <td>'.".65".'</td>
+				           </tr>	
+				           <tr class="important-total">
+				             <td>Estimated Total</td>
+				             <td>'.$total.'</td>
+				           </tr>';	
+          }  
+          ?>					    						
 				  </tbody>
 				</table>		  			
   			</div>
