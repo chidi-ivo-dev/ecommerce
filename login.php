@@ -10,7 +10,7 @@
 <?php
 				if (isset($_SESSION['logged_in'])) {
 
-					print ("<h1>You are logged in. You'lll be re-directed to the homepage in 5 seconds</h1>");
+					print ("<h3>You are logged in. You'lll be re-directed to the homepage in 5 seconds</h3>");
 					header("Refresh:5;url=home.php");
 
 				} else {
@@ -47,17 +47,15 @@
 
 					$sha_password = sha1($password);
 
-					$query= "SELECT * FROM users WHERE username= '$username' AND password= '$sha_password' LIMIT 1";
+					$login_sql= "SELECT * FROM users WHERE username= '" . $username . "'AND password= '" . $sha_password . "'LIMIT 1";
 
-					$result= mysql_query($query, $connection);
+					$login_result= $connection->query($login_sql);
 
-					if (mysql_num_rows($result) == 1) {
-
-						$row = mysql_fetch_row($result);
+					if ($login_result->num_rows == 1) {
 
 						$_SESSION['logged_in'] = true;
 
-						print "You are now logged in " . $username . ". You will be redirected to the homepage in 5 seconds.";
+						print "<h3>You are now logged in " . $username . ". You will be redirected to the homepage in 5 seconds.</h3>";
 
 						header("Refresh:5; url=home.php");
 

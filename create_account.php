@@ -114,7 +114,7 @@
 
 							if ($user_result->num_rows == 1) {
 
-								print "<h3>Account already exists. Try again.</h3>";
+								print "<h3>Account already exists. Try again.</h3><br/>";
 
 							} else {
 
@@ -122,7 +122,7 @@
 
 								$user_result= $connection->query($user_sql);
 
-								print "<h3>Account created! You will be redirected to login screen to get started.</h3>";
+								print "<h3>Account created! You will be redirected to login screen to get started.</h3><br/>";
 
 								header("Refresh:5; url=login.php");
 
