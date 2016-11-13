@@ -20,9 +20,15 @@
 <?php
 
 				if (isset($_SESSION)) {
-					print ("session is active");
+					print ("session is active <br/>");
 				} else {
-					print ("error");
+					print ("session error <br/>");
+				}
+
+				if (isset($_SESSION['logged_in'])) {
+					print ("logged in session is active </br>");
+				} else {
+					print ("logged in session error. </br>");
 				}
 
 ?>			

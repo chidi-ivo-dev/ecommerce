@@ -56,7 +56,9 @@ if (!isset($_GET['query'])) {
 		}
 
 	} else {
+
 		print ('No results found for query.');
+		
 	}
 ?>
 
