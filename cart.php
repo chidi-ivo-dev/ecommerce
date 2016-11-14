@@ -44,18 +44,20 @@
 
         while ($row = $result->fetch_assoc()) {
 
-          print ('<div class="row u-cf u-full-width product-card">');
+          foreach($_SESSION['cart'] as $id=>$val){
+            print ('<div class="row u-cf u-full-width product-card">');
           
-          print ('<div class="three columns"><img class="u-max-full-width" src=" ' . $row["image"] . '"></div>');
+            print ('<div class="three columns"><img class="u-max-full-width" src=" ' .$val["image"] . '"></div>');
 
 
-          print ('<div class="five columns"><h3>' . $row["product_name"] . '</h3><p>' . $row["description"] . '</p><p>Size: ' . $row["size"] . '</p><p>Stock: ' . $row["stock"] . '</p></div>');
+            print ('<div class="five columns"><h3>' . $val["product_name"] . '</h3><p>Size: ' . $val["size"] . '</p><p>Stock: ' . $val["stock"] . '</p></div>');
 
-          print ('<div class="two columns"><p>SKU: ' . $row["sku"] . '</p></div>');
+            print ('<div class="two columns"><p>SKU: ' . $val["sku"] . '</p></div>');
 
-          print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
+            print ('<div class="two columns"><p class="price">' . $val["price"] . '</p></div>');
 
-          print ('</div>');
+            print ('</div>');
+          }
         }
 
       } else {
@@ -70,30 +72,32 @@
   	<div class="one-half column button-row u-pull-right">
   		<div class="info">
 				<table class="u-full-width">
-				  <tbody>
-          <?php
+        <?php
+          
           $total = 0;
-          foreach($_SESSION['cart'] as $id=>$val)
-          {
-            $total=$val['price'];
-				    print '<tr>
-				             <td>Subtotal</td>
-				             <td>'.$val['price'].'</td>
-				           </tr>
-				           <tr>
-				             <td>Shipping and Handling</td>
-				             <td>FREE</td>
-				           </tr>
-				           <tr>
-				             <td>Estimated Tax</td>
-				             <td>'.".65".'</td>
-				           </tr>	
-				           <tr class="important-total">
-				             <td>Estimated Total</td>
-				             <td>'.$total.'</td>
-				           </tr>';	
-          }  
-          ?>					    						
+        
+        ?>
+				  <tbody>
+				    <tr>
+				      <td>Subtotal</td>
+				      <td><?php foreach($_SESSION['cart'] as $id=>$val){
+                $total += $val['price'];
+                print $total;
+              } ?>
+              </td>
+				   </tr>
+				   <tr>
+				     <td>Shipping and Handling</td>
+				     <td>FREE</td>
+				   </tr>
+				   <tr>
+				     <td>Estimated Tax</td>
+				     <td>FREE</td>
+				   </tr>	
+				   <tr class="important-total">
+				     <td>Estimated Total</td>
+				     <td><?php print $total; ?></td>
+				   </tr>					    						
 				  </tbody>
 				</table>		  			
   			</div>
