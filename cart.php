@@ -81,7 +81,7 @@
 				    <tr>
 				      <td>Subtotal</td>
 				      <td><?php foreach($_SESSION['cart'] as $id=>$val){
-                $total += $val['price'];
+                $total += 2;
                 print $total;
               } ?>
               </td>
