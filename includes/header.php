@@ -4,6 +4,7 @@
 
 	// session
 	session_start();
+
 ?>
 <html>
 	<head>

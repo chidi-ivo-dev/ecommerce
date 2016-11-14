@@ -20,13 +20,17 @@
 <?php
 
 				if (isset($_SESSION)) {
+					$_SESSION['hello'] = 'hello';
 					print ("session is active <br/>");
+					print_r($_SESSION);
 				} else {
 					print ("session error <br/>");
 				}
 
 				if (isset($_SESSION['logged_in'])) {
 					print ("logged in session is active </br>");
+					print ($_SESSION['logged_in']);
+					print_r ($_SESSION['logged_in']);
 				} else {
 					print ("logged in session error. </br>");
 				}

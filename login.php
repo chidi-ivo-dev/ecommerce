@@ -37,31 +37,29 @@
 
 					");
 
-				}
+					if ((isset($_POST['submit'])) && (!isset($_SESSION['logged_in']))) {
 
-				if ((isset($_POST['submit'])) && (!isset($_SESSION['logged_in']))) {
+						$username= mysql_real_escape_string($_POST['username']);
+						$password= mysql_real_escape_string($_POST['password']);
+						$sha_password = sha1($password);
 
-					$username= mysql_real_escape_string($_POST['username']);
+						$login_sql= "SELECT * FROM users WHERE username= '" . $username . "'AND password= '" . $sha_password . "'LIMIT 1";
 
-					$password= mysql_real_escape_string($_POST['password']);
+						$login_result= $connection->query($login_sql);
 
-					$sha_password = sha1($password);
+						if ($login_result->num_rows == 1) {
 
-					$login_sql= "SELECT * FROM users WHERE username= '" . $username . "'AND password= '" . $sha_password . "'LIMIT 1";
+							$_SESSION['logged_in'] = true;
 
-					$login_result= $connection->query($login_sql);
+							print "<h3>You are now logged in " . $username . ". You will be redirected to the homepage in 5 seconds.</h3>";
 
-					if ($login_result->num_rows == 1) {
+							header("Refresh:5; url=home.php");
 
-						$_SESSION['logged_in'] = true;
+						} else {
 
-						print "<h3>You are now logged in " . $username . ". You will be redirected to the homepage in 5 seconds.</h3>";
+							print "<h3>The login information you entered is incorrect, please try again.<h3>";
+						}
 
-						header("Refresh:5; url=home.php");
-
-					} else {
-
-						print "<h3>The login information you entered is incorrect, please try again.<h3>";
 					}
 
 				}
