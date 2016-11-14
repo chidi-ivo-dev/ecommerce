@@ -10,8 +10,24 @@
 <?php
 				if (isset($_SESSION['logged_in'])) {
 
-					print ("<h3>You are logged in. You'lll be re-directed to the homepage in 5 seconds</h3>");
-					header("Refresh:5;url=home.php");
+					print ("
+
+						<div class='row login-container'>
+
+							<div class='one-half column'>
+								<h2>Log Out</h2>
+								<p>You are logged in. To logout: </p>
+								<a href='includes/logout.php'><input class='button-primary create-account-button' type='submit' value='Logout'></a>								
+							</div>
+
+							<div class='one-half column u-pull-right'>
+								<h2>Create Account</h2>
+									<p>Don't have an account? Create one here!</p>
+									<a href='create_account.php'><input class='button-primary create-account-button' type='submit' value='Create Account'></a>
+							</div>
+						</div>
+
+					");					
 
 				} else {
 
