@@ -16,8 +16,8 @@
 
 							<div class='one-half column'>
 								<h2>Log Out</h2>
-								<p>You are logged in. To logout: </p>
-								<a href='includes/logout.php'><input class='button-primary create-account-button' type='submit' value='Logout'></a>								
+								<p>You are logged in, " . $username . ". To logout: </p>
+								<a href='logout.php'><input class='button-primary create-account-button' type='submit' value='Logout'></a>								
 							</div>
 
 							<div class='one-half column u-pull-right'>
