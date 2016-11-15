@@ -19,7 +19,7 @@
 
 <?php
 
-				if (isset($_SESSION['logged_in'])) {
+				if ($_SESSION['logged_in'] == true) {
 					print ("logged in session is active <br/>");
 				} else {
 					print ("logged in session error. </br>");
