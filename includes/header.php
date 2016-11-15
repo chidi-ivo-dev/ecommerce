@@ -82,3 +82,4 @@
 		</div>
 	</header>
 	<body>
+	<?php include_once("analyticstracking.php") ?>
