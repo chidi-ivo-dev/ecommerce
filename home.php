@@ -21,9 +21,6 @@
 
 				if (isset($_SESSION['logged_in'])) {
 					print ("logged in session is active <br/>");
-					print_r($_SESSION);
-					print_r ($_SESSION['logged_in'] . "<br/>");
-					print_r ($_SESSION['logged_in'] . "<br/>");
 				} else {
 					print ("logged in session error. </br>");
 				}
