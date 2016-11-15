@@ -76,14 +76,14 @@
           
           $total = 0;
         
+          foreach($_SESSION['cart'] as $id=>$val){
+                $total += $val['price'];
+              }
         ?>
 				  <tbody>
 				    <tr>
 				      <td>Subtotal</td>
-				      <td><?php foreach($_SESSION['cart'] as $id=>$val){
-                $total += 2;
-                print $total;
-              } ?>
+				      <td>$<?php echo $total; ?>
               </td>
 				   </tr>
 				   <tr>
@@ -92,11 +92,12 @@
 				   </tr>
 				   <tr>
 				     <td>Estimated Tax</td>
-				     <td>FREE</td>
+				     <td>$<?php $tax = $total*.065;
+             print $tax; ?></td>
 				   </tr>	
 				   <tr class="important-total">
 				     <td>Estimated Total</td>
-				     <td><?php print $total; ?></td>
+				     <td><strong>$</strong><?php print ($total+$tax); ?></td>
 				   </tr>					    						
 				  </tbody>
 				</table>		  			
