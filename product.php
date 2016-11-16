@@ -1,7 +1,9 @@
 <?php
 
-	include 'includes/header.php';
+	ob_start();
+	include 'includes/header.php'; 
 
+	// Get SKU
 	$sku = $_GET['sku'];
 
 	$sql = "SELECT * FROM products WHERE sku = ". $sku ."";
@@ -11,6 +13,7 @@
 	if (!$result) {
 		trigger_error('Invalid query: ' . $connection->error);
 	}
+
 ?>
 
 <!-- Body -->
@@ -38,16 +41,26 @@
 						<a href='addtocart.php?sku=". $row["sku"] . "&product_name=". $row["product_name"] . "&price=". $row["price"] ."&image=" . $row["image"] . "&size=" . $row["size"] . "&stock=" . $row["stock"] . "' class='u-pull-right'><input class='button-primary' type='submit' value='Add To Cart'></a></div>");
 
 					print ('</div>');
+
+					// Page Title
+					$buffer=ob_get_contents();
+					ob_end_clean();
+
+					$title = "Chairman's Bestfriend - " . $row['product_name'];
+					$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+
+					echo $buffer; 					
 				}
 
 			} else {
 				print ("No results found for query.");
 			}
-
 		?>	
 	</div>
 </div>
 
 <!-- /Body -->
 		
-<?php include 'includes/footer.php'; ?>
+<?php 
+
+include 'includes/footer.php'; ?>

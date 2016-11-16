@@ -1,4 +1,17 @@
-<?php include 'includes/header.php'; ?>
+<?php
+
+ob_start();
+include 'includes/header.php'; 
+
+$buffer=ob_get_contents();
+ob_end_clean();
+
+$title = "Chairman's Bestfriend - Admin";
+$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+
+echo $buffer;
+
+?>
 
 <!-- Body -->
 <div class="container" id="admin">

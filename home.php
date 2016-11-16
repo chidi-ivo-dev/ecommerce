@@ -1,6 +1,15 @@
 <?php 
 
+	ob_start();
 	include 'includes/header.php'; 
+
+	$buffer=ob_get_contents();
+	ob_end_clean();
+
+	$title = "Chairman's Bestfriend - Home";
+	$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+
+	echo $buffer; 
 		
 	$desks_sql = "SELECT * FROM products WHERE category = 'Desks' LIMIT 1, 3";
 	$chairs_sql = "SELECT * FROM products WHERE category = 'Chairs' LIMIT 1, 3";

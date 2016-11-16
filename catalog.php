@@ -1,7 +1,9 @@
 <?php
 
-	include 'includes/header.php';
+	ob_start();
+	include 'includes/header.php'; 
 
+	// Get Category
 	$category = $_GET['category'];
 
 	$sql = "SELECT * FROM products WHERE category = '". $category ."'";
@@ -11,6 +13,15 @@
 	if (!$result) {
 		trigger_error('Invalid query: ' . $connection->error);
 	}
+
+	// Title Code
+	$buffer=ob_get_contents();
+    ob_end_clean();
+
+    $title = "Chairman's Bestfriend - " . $_GET['category'] . " Catalog";
+    $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+
+    echo $buffer;
 
 ?>
 
@@ -49,7 +60,8 @@
 									<i class="fa fa-star-o" aria-hidden="true"></i>
 									<i class="fa fa-star-o" aria-hidden="true"></i>
 									<i class="fa fa-star-o" aria-hidden="true"></i>
-									</div>');
+									</div>'
+							);
 
 							print ('<div class="two columns"><p>SKU: ' . $row["sku"] . '</p></div>');
 

@@ -1,8 +1,20 @@
-<?php include 'includes/header.php'; 
+<?php 
 
-if (!isset($_GET['query'])) {
-	header("Location: home.php");
-}
+	ob_start();
+	include 'includes/header.php'; 
+
+	$buffer=ob_get_contents();
+	ob_end_clean();
+
+	$title = "Chairman's Bestfriend - Search";
+	$buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
+
+	echo $buffer; 
+
+	if (!isset($_GET['query'])) {
+		header("Location: home.php");
+	}
+
 ?>
 
 <!-- Body -->
