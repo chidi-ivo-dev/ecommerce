@@ -33,7 +33,7 @@ echo $buffer;
 			      <td><a href="#">Recent Orders</a></td>
 			    </tr>
 			    <tr>
-			      <td><a href="#">Product Listing</a></td>
+			      <td><a href="products.php">Product Listing</a></td>
 			    </tr>
 			    <tr>
 			      <td><a href="#">Analytics</a></td>
