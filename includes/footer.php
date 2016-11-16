@@ -22,9 +22,7 @@
 						<ul class="footer-nav">
 							<li class="title">Chairman's Bestfriend</li>
 							<li><a href="#">About Us</a></li>
-							<li><a href="#">Press</a></li>
-							<li><a href="#">FAQ</a></li>
-							<li><a href="#">Shipping &amp; Returns</a></li>
+							<li><a href="shipping_returns.php">Shipping &amp; Returns</a></li>
 							<li><a href="admin.php">Admin Access</a></li>
 						</ul>
 					</div>

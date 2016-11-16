@@ -17,16 +17,6 @@
 		<div class="row" id="cover-image">
 		</div>
 
-<?php
-
-				if ($_SESSION['logged_in'] == true) {
-					print ("logged in session is active <br/>");
-				} else {
-					print ("logged in session error. </br>");
-				}
-
-?>			
-
 		<div class="container" id="content">
 			<div class="row card">
 				<div class="one-half column" id="banner-image">
