@@ -1,26 +1,32 @@
-<?php 
-
-  ob_start();
-  include 'includes/header.php'; 
-
-  $buffer=ob_get_contents();
-  ob_end_clean();
-
-  $title = "Chairman's Bestfriend - Fufillment";
-  $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
-
-  echo $buffer; 
-
-?>
+<?php include 'includes/header.php'; ?>
 
 <!-- Body -->
 <div class="container" id="content">	
 
+<?php
+		if (!isset($_SESSION['logged_in'])) 
+		{
+			print 
+				("
+				<a href='login.php'><input class='button-primary'  type='submit' value='Login'></a>			
+				<a href='create_account.php'><input class='button-primary create-account-button' type='submit' value='Create Account'></a>
+				");
+		}
+		
+		if (isset($_GET['sku'])) 
+		{
+			$sku = $_GET['sku'];
+		
+			$sql = "SELECT * FROM products WHERE sku = ". $sku ."";
+
+			$result = $connection->query($sql);
+		}		
+?>
     <!-- shipping -->
 
     <div class="row title-section">
       <div class="twelve columns">
-        <h2>Enter Your Shipping Details</h2>
+        <h2>Shipping Details</h2>
       </div>
     </div>
 
@@ -66,7 +72,7 @@
 
     <div class="row title-section">
       <div class="twelve columns">
-        <h2>Enter Your Payment Details</h2>
+        <h2>Payment Details</h2>
       </div>
     </div>
 
@@ -98,6 +104,32 @@
       </div>
     </div>
 
+	<?php	
+		if ($result->num_rows>0) 
+		{
+
+        while ($row = $result->fetch_assoc()) 
+		{
+
+          foreach($_SESSION['cart'] as $id=>$val){
+            print ('<div class="row u-cf u-full-width product-card">');
+          
+            print ('<div class="three columns"><img class="u-max-full-width" src=" ' .$val["image"] . '"></div>');
+
+
+            print ('<div class="five columns"><h3>' . $val["product_name"] . '</h3><p>Size: ' . $val["size"] . '</p><p>Stock: ' . $val["stock"] . '</p></div>');
+
+            print ('<div class="two columns"><p>SKU: ' . $val["sku"] . '</p></div>');
+
+            print ('<div class="two columns"><p class="price">' . $val["price"] . '</p></div>');
+
+            print ('</div>');
+          }
+        }
+
+		}	
+	?>
+<!--	
     <div class="row u-cf u-full-width product-card">
       <div class="three columns">
         <img class="u-max-full-width" src="img/table1.png">
@@ -133,7 +165,7 @@
         <p class="price">$299</p>
       </div>  
     </div>
-
+-->
     <div class="row">
       <div class="one-half column button-row u-pull-right">
         <div class="info">

@@ -1,18 +1,8 @@
-<?php
-
-  ob_start();
-  include 'includes/header.php'; 
-
-  $buffer=ob_get_contents();
-  ob_end_clean();
-
-  $title = "Chairman's Bestfriend - Shopping Cart";
-  $buffer = preg_replace('/(<title>)(.*?)(<\/title>)/i', '$1' . $title . '$3', $buffer);
-
-  echo $buffer; 
+<?php include 'includes/header.php'; 
   
+	$_SESSION['cart'][] = array("product_name"=>$_GET['product_name'], "price"=>$_GET['price'], "sku"=>$_GET['sku'], "image"=>$_GET['image'], "size"=>$_GET['size'], "stock"=>$_GET['stock']);
 
-  if (isset($_GET['sku'])) {
+	if (isset($_GET['sku'])) {
 
     $sku = $_GET['sku'];
 
@@ -43,7 +33,7 @@
   </div>
 
   <div class="row button-row u-pull-right">
-		<a href="home.php"><input class="button" type="submit" value="Continue Shopping"></a>
+		<input class="button" type="submit" value="Continue Shopping">
 		<a href="fulfillment.php"><input class="button-primary" type="submit" value="Proceed to Checkout"></a>
   </div>
 
@@ -87,14 +77,14 @@
           
           $total = 0;
         
-          foreach($_SESSION['cart'] as $id=>$val){
-                $total += $val['price'];
-              }
         ?>
 				  <tbody>
 				    <tr>
 				      <td>Subtotal</td>
-				      <td>$<?php echo $total; ?>
+				      <td><?php foreach($_SESSION['cart'] as $id=>$val){
+                $total += 2;
+                print $total;
+              } ?>
               </td>
 				   </tr>
 				   <tr>
@@ -103,12 +93,11 @@
 				   </tr>
 				   <tr>
 				     <td>Estimated Tax</td>
-				     <td>$<?php $tax = $total*.065;
-             print $tax; ?></td>
+				     <td>FREE</td>
 				   </tr>	
 				   <tr class="important-total">
 				     <td>Estimated Total</td>
-				     <td><strong>$</strong><?php print ($total+$tax); ?></td>
+				     <td><?php print $total; ?></td>
 				   </tr>					    						
 				  </tbody>
 				</table>		  			
