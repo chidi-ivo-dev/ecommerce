@@ -32,7 +32,7 @@
   </div>
 
   <div class="row button-row u-pull-right">
-		<input class="button" type="submit" value="Continue Shopping">
+		<a href="home.php"><input class="button" type="submit" value="Continue Shopping"></a>
 		<a href="fulfillment.php"><input class="button-primary" type="submit" value="Proceed to Checkout"></a>
   </div>
 

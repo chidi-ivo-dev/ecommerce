@@ -35,7 +35,7 @@
 					print ('<div class="two columns"><p class="price">' . $row["price"] . '</p></div>');
 
 					print ("<div class='row'>
-						<a href='addtocart.php?sku=". $row["sku"] . "&product_name=". $row["product_name"] . "&price=". $row["price"] ."&image=" . $row["image"] . "&size=" . $row["size"] . "&stock=" . $row["stock"] . "' class='button-primary u-pull-right'>Add to Cart</a></div>");
+						<a href='addtocart.php?sku=". $row["sku"] . "&product_name=". $row["product_name"] . "&price=". $row["price"] ."&image=" . $row["image"] . "&size=" . $row["size"] . "&stock=" . $row["stock"] . "' class='u-pull-right'><input class='button-primary' type='submit' value='Add To Cart'></a></div>");
 
 					print ('</div>');
 				}
