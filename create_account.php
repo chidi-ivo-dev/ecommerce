@@ -77,7 +77,11 @@
 					{
 						if (isset($_POST['submit'])) 
 						{
+<<<<<<< HEAD
 							$email 		= $_POST['email'];
+=======
+							$username	= $_POST['username'];
+>>>>>>> e38309a3891b3852292a0fb819764bb8d87e1030
 							$password 	= $_POST['password'];
 							$fName 		= $_POST['fName'];
 							$lName 		= $_POST['lName'];
@@ -85,8 +89,14 @@
 							$city 		= $_POST['city'];
 							$state 		= $_POST['state'];
 							$zipcode 	= $_POST['zipcode'];
+<<<<<<< HEAD
 							$hashed_password = sha1($password);
 							$clients_sql = "SELECT * FROM clients WHERE email='" . $email . "' LIMIT 1";
+=======
+							$email      = $_POST['email'];
+							$hashed_password = sha1($password);
+							$clients_sql = "SELECT * FROM clients WHERE username='" . $username . "' LIMIT 1";
+>>>>>>> e38309a3891b3852292a0fb819764bb8d87e1030
 							$clients_result = $connection->query($clients_sql);
 							if ($clients_result->num_rows == 1) 
 							{
@@ -95,6 +105,7 @@
 							else 
 							{
                                 $insert_client_query = "INSERT INTO clients 
+<<<<<<< HEAD
 										(client_id, first_name, last_name, phone, address, apt_suite, city, state, zipcode, email, password, user_level) 
 								VALUES (NULL, '$fName', '$lName', '".$_POST['phone']."', '$address', '".$_POST['aptSuite']."',
 														'$city', '$state', '$zipcode', '$email', '$hashed_password', 'guest')";        
@@ -105,6 +116,18 @@
 								$_SESSION['logged_first_name']	= $fName;
 								$_SESSION['logged_user_level'] 	= 'guest';
 								$_SESSION['logged_email'] 		= $email;
+=======
+										(client_id, first_name, last_name, phone, address, apt_suite, city, state, zipcode, email, password, user_level, username) 
+								VALUES (NULL, '$fName', '$lName', '".$_POST['phone']."', '$address', '".$_POST['aptSuite']."',
+														'$city', '$state', '$zipcode', '$email', '$hashed_password', 'guest', $username)";        
+           
+								$insert_client_result = $connection->query($insert_client_query);
+								print "<h3>Account created! </h3><br/>";
+								$_SESSION['logged_in'] 			= true;
+								$_SESSION['logged_first_name']	= $fName;
+								$_SESSION['logged_user_level'] 	= 'guest';
+								$_SESSION['logged_username'] 	= $username;
+>>>>>>> e38309a3891b3852292a0fb819764bb8d87e1030
 								print "<h3>You are now logged in " . $fName . ". You will be redirected to the homepage in 5 seconds.</h3>";
 								header("Refresh:5; url=home.php");
 							}
@@ -116,8 +139,13 @@
 			<form id="clientform" method="post" action="create_account.php">
 				<div class="row">
 					<div class="six columns">
+<<<<<<< HEAD
 						<label for="email">Email </label>
 						<input class="u-full-width" type="text" id="email" name="email">
+=======
+						<label for="username">Username </label>
+						<input class="u-full-width" type="text" id="username" name="username">
+>>>>>>> e38309a3891b3852292a0fb819764bb8d87e1030
 					</div>
 					<div class="six columns">
 						<label for="password">Password</label>
@@ -158,12 +186,28 @@
 					<div class="six columns">
 						<label for="zipcode">Zipcode</label>
 						<input class="u-full-width" type="text"  id="zipcode" name="zipcode">
+<<<<<<< HEAD
 					</div>
 					<div class="six columns">
 						<label for="phone">Phone Number</label>
 						<input class="u-full-width" type="text"  id="phone" name="phone">
 					</div>	
 				</div>					
+=======
+					</div>
+					<div class="six columns">
+						<label for="phone">Phone Number</label>
+						<input class="u-full-width" type="text"  id="phone" name="phone">
+					</div>	
+				</div>			
+				<div class="row">
+					<div class="six columns">
+						<label for="email">Email </label>
+						<input class="u-full-width" type="text" id="email" name="email">
+					</div>
+				</div>
+				
+>>>>>>> e38309a3891b3852292a0fb819764bb8d87e1030
 				<input class="button-primary" type="submit" name="submit" id="submit" value="Submit">
 			</form> 
 			</div>

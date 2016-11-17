@@ -20,7 +20,25 @@
 			$sql = "SELECT * FROM products WHERE sku = ". $sku ."";
 
 			$result = $connection->query($sql);
-		}		
+		}	
+
+		if (!isset($_SESSION['logged_in'])) 
+		{
+				$fName = " ";
+				
+				$select_client_query = "SELECT * FROM clients WHERE username = '".$_SESSION['logged_username']."'"; 
+															  
+				$selectt_client_result = $mysqli->query($select_client_query);  
+				if ($select_client_result) 
+				{
+					
+				}
+				else
+				{
+					print "notfound";
+					$fName = "nahhh ";
+				}
+		}
 ?>
     <!-- shipping -->
 
@@ -29,44 +47,55 @@
         <h2>Shipping Details</h2>
       </div>
     </div>
-
-    <form>
-      <div class="row">
-        <div class="six columns">
-          <label for="fName">First Name</label>
-          <input class="u-full-width" type="fName" placeholder="Jessica" id="fName">
-        </div>
-        <div class="six columns">
-          <label for="lName">Last Name</label>
-          <input class="u-full-width" type="lName" placeholder="Sunga" id="lName">
-        </div>
-      </div>
-      <div class="row">
-        <div class="ten columns">
-            <label for="address">Address</label>
-            <input class="u-full-width" type="address" placeholder="1234 Fake Street" id="address">
-        </div>
-        <div class="two columns">
-            <label for="aptSuite">Apt, Suite</label>
-            <input class="u-full-width" type="aptSuite" placeholder="123" id="aptSuite">
-        </div>
-      </div>
-      <label for="aptSuite">City</label>
-      <input class="u-full-width" type="ckty" placeholder="Orlando" id="city">
-      <div class="row">
-        <div class="six columns">
-          <label for="state">State</label>
-          <input class="u-full-width" type="state" placeholder="FL" id="state">
-        </div>
-        <div class="six columns">
-          <label for="zipCode">Zip Code</label>
-          <input class="u-full-width" type="zipCode" placeholder="32816" id="zipCode">
-        </div>
-      </div>
-      <label for="aptSuite">Phone Number</label>
-      <input class="u-full-width" type="phoneNumber" placeholder="4072857055" id="phoneNumber">
-      <input class="button-primary" type="submit" value="Submit">
-    </form>
+			<form id="clientform" method="post" action="insertClient.php">
+				<div class="row">
+					<div class="six columns">
+						<label for="fName">First Name</label>
+						<input class="u-full-width" type="text" id="fName" name="fName" value= " ">
+					</div>
+					<div class="six columns">
+						<label for="lName">Last Name</label>
+						<input class="u-full-width" type="text"  id="lName" name="lName">
+					</div>
+				</div>
+				<div class="row">
+					<div class="ten columns">
+						<label for="address">Address</label>
+						<input class="u-full-width" type="text"  id="address" name="address">
+					</div>
+					<div class="two columns">
+						<label for="aptSuite">Apt, Suite</label>
+						<input class="u-full-width" type="text"  id="aptSuite" name="aptSuite">
+					</div>
+				</div>
+				<div class="row">
+					<div class="six columns">				
+						<label for="city">City</label>
+						<input class="u-full-width" type="text" id="city" name="city">
+					</div>						
+					<div class="six columns">
+						<label for="state">State</label>
+						<input class="u-full-width" type="text"  id="state" name="state">
+					</div>
+				</div>
+				<div class="row">				
+					<div class="six columns">
+						<label for="zipcode">Zipcode</label>
+						<input class="u-full-width" type="text"  id="zipcode" name="zipcode">
+					</div>
+					<div class="six columns">
+						<label for="phone">Phone Number</label>
+						<input class="u-full-width" type="text"  id="phone" name="phone">
+					</div>	
+				</div>					
+				<div class="row">
+					<div class="six columns">
+						<label for="email">Email </label>
+						<input class="u-full-width" type="text" id="email" name="email">
+					</div>
+				</div>
+				<input class="button-primary" type="submit" name="submit" id="submit" value="Submit">
+			</form> 
 
     <!-- payment -->
 

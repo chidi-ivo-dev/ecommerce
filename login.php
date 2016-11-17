@@ -38,19 +38,31 @@
 					");
 					if ((isset($_POST['submit'])) && (!isset($_SESSION['logged_in']))) 
 					{
+<<<<<<< HEAD
 						$email= mysql_real_escape_string($_POST['email']);
+=======
+						$username= mysql_real_escape_string($_POST['username']);
+>>>>>>> e38309a3891b3852292a0fb819764bb8d87e1030
 						$password= mysql_real_escape_string($_POST['password']);
 						$sha_password = sha1($password);
 						$login_sql= "SELECT * FROM clients";
 						$login_result= $connection->query($login_sql);
 						while ($row = $login_result->fetch_object()) 
 						{
+<<<<<<< HEAD
 							if (($email == ($row->email)) && ($sha_password  == ($row->password)))
+=======
+							if (($username == ($row->username)) && ($sha_password  == ($row->password)))
+>>>>>>> e38309a3891b3852292a0fb819764bb8d87e1030
 								{ 
 								$_SESSION['logged_in'] = true;
 								$_SESSION['logged_first_name']	= $row->first_name;
 								$_SESSION['logged_user_level'] 	= $row->user_level;
+<<<<<<< HEAD
 								$_SESSION['logged_email'] 		= $row->email;
+=======
+								$_SESSION['logged_username'] 	= $row->username;
+>>>>>>> e38309a3891b3852292a0fb819764bb8d87e1030
 								$_SESSION['logged_client_idl'] 	= $row->client_id;
 								} 
 						}
