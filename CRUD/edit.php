@@ -1,5 +1,5 @@
 <?php
-include("file:///Macintosh HD/Users/RyanClark/Desktop/Lab_Database/connection.php");
+include("connection.php");
 
 if(isset($_GET['id'])) {
 	$id = $_GET['id'];
@@ -88,7 +88,7 @@ if(isset($_GET['id'])) {
         
     <td><button type="submit">Save</button> </td>
 
-    <td><a href="file:///Macintosh HD/Users/RyanClark/Desktop/Lab_Database/products.php"> <button type="button">back</button></a></td>
+    <td><a href="products.php"> <button type="button">back</button></a></td>
     </tr>
     </tr>
 

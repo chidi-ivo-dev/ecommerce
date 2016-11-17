@@ -1,6 +1,6 @@
 <?
 	include("connection.php");
-	$query = "SELECT name, description, category, size, sku, stock, cost, price, image FROM products";
+	$query = "SELECT product_name, description, category, size, sku, stock, cost, price, image FROM products";
 	$result = $mysqli->query($query);
 	if($mysqli->error) {
 		print "Query failed: ".$mysqli->error;
@@ -11,14 +11,16 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<title>Lab Database</title>
-	<style type="text/css">
+    <style type="text/css">
+	@import url('css/styles.css');
+	
 	</style>
 </head>
 	<div id="content-container">
 	 	<div id="content">
 	 		<h1> PRODUCTS</h1>
 				<body>
-                <a href="products.php">Add New</a><br><br>
+                <a href="add.php">Add New</a><br><br>
 					<table width="600" border="1" cellpadding="1" cellspacing="1">
         				<thead>
             			<tr>
@@ -36,16 +38,18 @@
             		<tbody>
 						
 						<?php
-						$sql = " select name, description, category, size, sku, stock, cost, price, image FROM products";
+						$sql = " select product_name, description, category, size, sku, stock, cost, price, image FROM products";
 						$result = mysqli_query($mysqli, $sql);
+						
 						if(mysqli_num_rows($result) > 0){
 						
-							while($row = mysqli_fetch_assoc($result)) 
+						while($row = mysqli_fetch_assoc($result)) 
 							{
+							
 								?>
 									
 								 <tr>
-								 <td><?=$row['name']?></td>
+								 <td><?=$row['product_name']?></td>
 								 <td><?=$row['description']?></td>
 								 <td><?=$row['category']?></td>
 								 <td><?=$row['size']?></td>
@@ -55,14 +59,15 @@
 								 <td><?=$row['price']?></td>
 								 <td><?=$row['image']?></td>
 								 <td> 
-								 <a href="edit.php?id=<?=$row['product_id']?>">Edit</a> 
-                              <a href="delete.php?id=<?=$row['product_id']?>">Delete</a> 
+								 <a href="edit.php?id=<?=$row['id']?>">Edit</a> 
+                              <a href="delete.php?id=<?=$row['id']?>">Delete</a> 
 								</td>
 							    </tr>
 								<?php
-							}
-						}
 							
+						
+						}
+						}
 						?>	
 					</tbody>
 				</table>

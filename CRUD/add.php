@@ -2,8 +2,8 @@
 include("connection.php");
 
 if(isset($_POST['btn_submit'])){
-	$sql = "insert into products(name, description, category, size, sku, stock, cost, price, image)
-		values('".$_POST['txt_name']."', '".$_POST['txt_description']."', '".$_POST['txt_category']."', '".$_POST['txt_size']."', '".$_POST['txt_sku']."', '".$_POST['txt_stock']."', '".$_POST['txt_cost']."', '".$_POST['txt_price']."', '".$_POST['txt_image']."')";
+	$sql = "insert into products(product_name, description, category, size, sku, stock, cost, price, image)
+		values('".$_POST['txt_product_name']."', '".$_POST['txt_description']."', '".$_POST['txt_category']."', '".$_POST['txt_size']."', '".$_POST['txt_sku']."', '".$_POST['txt_stock']."', '".$_POST['txt_cost']."', '".$_POST['txt_price']."', '".$_POST['txt_image']."')";
 		
 
 		if(mysqli_query($mysqli, $sql)){
@@ -20,7 +20,7 @@ if(isset($_POST['btn_submit'])){
 	<table>
     	<tr>
         	<td>Product</td>
-           <td><input name="txt_name"></td>
+           <td><input name="txt_product_name"></td>
            </tr>
         <tr>
            <td>Description</td>
