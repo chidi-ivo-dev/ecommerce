@@ -24,7 +24,7 @@
 							<div class='one-half column'>
 								<h2>Log In</h2>
 								<form name='login' action='login.php' method='POST'>
-									<b>Email: </b><input class='u-full-width' type='text' name='email'><br/>
+									<b>Username: </b><input class='u-full-width' type='text' name='username'><br/>
 									<b>Password: </b><input class='u-full-width' type='password' name='password'><br/>
 									<input id='button' class='button-primary' name='submit' id='submit' type='submit' value='Login'>
 								</form>
@@ -38,19 +38,19 @@
 					");
 					if ((isset($_POST['submit'])) && (!isset($_SESSION['logged_in']))) 
 					{
-						$email= mysql_real_escape_string($_POST['email']);
+						$username= mysql_real_escape_string($_POST['username']);
 						$password= mysql_real_escape_string($_POST['password']);
 						$sha_password = sha1($password);
 						$login_sql= "SELECT * FROM clients";
 						$login_result= $connection->query($login_sql);
 						while ($row = $login_result->fetch_object()) 
 						{
-							if (($email == ($row->email)) && ($sha_password  == ($row->password)))
+							if (($username == ($row->username)) && ($sha_password  == ($row->password)))
 								{ 
 								$_SESSION['logged_in'] = true;
 								$_SESSION['logged_first_name']	= $row->first_name;
 								$_SESSION['logged_user_level'] 	= $row->user_level;
-								$_SESSION['logged_email'] 		= $row->email;
+								$_SESSION['logged_username'] 	= $row->username;
 								$_SESSION['logged_client_idl'] 	= $row->client_id;
 								} 
 						}
