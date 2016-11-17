@@ -1,11 +1,10 @@
 <!doctype html>
 <?php
+	ob_start();
+	session_start();
 	include("includes/db-connect.php");
 
-	// session
-	session_start();
-
-	$_SESSION['logged_in'] = false;
+	
 
 ?>
 <html>
@@ -13,7 +12,8 @@
 		<!-- basic page -->
 		<meta charset="utf-8">
 		<meta name="description" content="">
-		<title>%TITLE%</title>
+			<meta name="author" content="">
+		<title>Chairman's Bestfriend </title>
 
 		<!-- mobile -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,6 +55,17 @@
 			    	<div class="center-align"><a href="login.php">Account</a></div>
 			    </div>
 			</div>
+			<div>
+			<?php
+		     if (isset($_SESSION['logged_in'])) 
+				{
+					print ("
+
+								<p>Welcome! " . $_SESSION['logged_first_name'] . ".  </p>
+					");	
+				}
+			?>	
+			</div>
 		</div>
 		<div class="row" id="header-border"></div>
 		<div class="container">
@@ -81,4 +92,3 @@
 		</div>
 	</header>
 	<body>
-	<?php include_once("analyticstracking.php") ?>
